@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+:root {
+  --rosaPetite: #f06292;
+  --cinzaLimpo: #f8f9fa;
+  --fundoLuxo: #fafafa;
+  --pretoPetite: #1a1a1a;
+  --bordaSuave: rgba(0, 0, 0, 0.05);
+  --textoCorpo: #4a4a4a;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--pretoPetite);
+  font-family: 'Cormorant Garamond', serif;
+  padding: 0;
+  margin: 0;
+}
+
+.tituloMinimal {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.secaoSobre {
+  background-color: var(--cinzaLimpo);
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--bordaSuave);
+}
+
+.layoutMain {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.sidebar {
+  position: sticky;
+  top: 140px;
+  height: fit-content;
+}
+
+.sidebar h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 30px;
+  opacity: 0.8;
+  color: var(--pretoPetite);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sidebar li:hover {
+  opacity: 1;
+  padding-left: 5px;
+}
+
+.navLinks button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.navLinks button:hover {
+  color: var(--rosaPetite);
+  transform: translateY(-1px);
+}
+
+.userIcons button,
+.userIcons div {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.userIcons svg {
+  width: 20px;
+  height: 20px;
+  stroke: #000;
+  stroke-width: 1.2;
+}
+
+.userIcons button:hover,
+.userIcons div:hover {
+  opacity: 0.5;
+}
+
+.gridProdutos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.cardProdutoClean {
+  background: #fff;
+  transition: opacity 0.3s;
+}
+
+.cardProdutoClean:hover {
+  opacity: 0.85;
+}
+
+.imgContainer {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background-color: var(--cinzaLimpo);
+  margin-bottom: 15px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btnMinimal {
+  background: var(--pretoPetite);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btnMinimal:hover {
+  background: var(--rosaPetite);
+}
+
+.heroSection {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  background: var(--fundoLuxo);
+  margin-bottom: 40px;
+}
+
+.heroSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.gridAnuncios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 100px 0;
+  border-top: 1px solid var(--bordaSuave);
+  margin-bottom: 40px;
+}
+
+.anuncioItem {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: var(--fundoLuxo);
+  border: 1px solid var(--bordaSuave);
+}
+
+.anuncioItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.anuncioItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anuncioItem:hover img {
+  transform: scale(1.08);
+}
+
+.anuncioTexto {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.anuncioTexto p {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.anuncioTexto h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.headerPatBo {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid var(--bordaSuave);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.contatoWhatsApp {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--bordaSuave);
+  text-decoration: none;
+}
+
+.contatoWhatsApp:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.contatoWhatsApp svg {
+  width: 28px;
+  height: 28px;
+  fill: #25d366;
+}
+
+.logoCentral {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  letter-spacing: 6px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.userIcons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  font-size: 18px;
+  color: #000;
+}
+
+.modalDireito {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 450px;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.carrinhoHeader {
+  padding: 30px;
+  border-bottom: 1px solid var(--bordaSuave);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrinhoItens {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.carrinhoFooter {
+  padding: 30px;
+  border-top: 1px solid var(--bordaSuave);
+  background: #fff;
+}
+
+.seletorTamanho {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.radioTamanho {
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.radioTamanho.ativo {
+  border-color: var(--pretoPetite);
+  background: var(--pretoPetite);
+  color: white;
+}
+
+.bannerTopo {
+  background: #9e8e6b;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.secaoBrand {
+  background-color: var(--fundoLuxo);
+  padding: 100px 20px;
+  border-top: 1px solid var(--bordaSuave);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secaoBrandConteudo {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
